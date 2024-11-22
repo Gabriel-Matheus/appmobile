@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/background"
+    tools:context=".FormLogin">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,5 +35,7 @@
         android:text="Próxima"
         tools:layout_editor_absoluteX="241dp"
         tools:layout_editor_absoluteY="445dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
