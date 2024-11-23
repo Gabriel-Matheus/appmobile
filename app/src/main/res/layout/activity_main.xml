@@ -20,22 +20,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.096" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Anterior"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="445dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Próxima"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="445dp" />
 
 
+    <View
+        android:id="@+id/view1"
+        style="@style/ContainerComponents"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+   <Button
+       style="@style/Botoes"
+       android:backgroundTint="@color/softOrange"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
