@@ -10,29 +10,38 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pensamento do Dia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        style="@style/Title"
+        android:id="@+id/textview1"
+        android:text="@string/title"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
-
-
+        />
 
     <View
         android:id="@+id/view1"
         style="@style/ContainerComponents"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview1"
         />
 
-   <Button
-       style="@style/Botoes"
-       android:backgroundTint="@color/softOrange"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-/>
+    <Button
+        style="@style/Buttons"
+        android:text="Anterior"
+        android:layout_width="110sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="70sp" />
+
+
+    <Button
+        style="@style/Buttons"
+        android:text="Próxima"
+        android:layout_width="110sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="70sp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ContainerComponents">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">250dp</item>
+        <item name="android:layout_marginTop">75dp</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:background">@drawable/container_components</item>
+    </style>
+
+    <style name="Buttons">
+        <item name="android:backgroundTint">@color/softOrange</item>
+        <item name="android:layout_marginTop">60dp</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/softGreen</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">60sp</item>
+    </style>
+</resources>
