@@ -7,6 +7,10 @@
         <item name="android:layout_marginTop">75dp</item>
         <item name="android:layout_marginHorizontal">20dp</item>
         <item name="android:background">@drawable/container_components</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingHorizontal">6dp</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:fontFamily">@font/alegreya_sc_medium</item>
     </style>
 
     <style name="Buttons">

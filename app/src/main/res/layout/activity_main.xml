@@ -19,10 +19,11 @@
         android:fontFamily="@font/amita"
         />
 
-    <View
+    <EditText
         android:id="@+id/view1"
         style="@style/ContainerComponents"
         app:layout_constraintTop_toBottomOf="@id/textview1"
+        android:text="Olhe para cima e de sempre o melhor que puder"
         />
 
     <Button
