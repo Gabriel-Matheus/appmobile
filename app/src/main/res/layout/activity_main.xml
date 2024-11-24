@@ -22,8 +22,7 @@
         android:id="@+id/view1"
         style="@style/ContainerComponents"
         app:layout_constraintTop_toBottomOf="@id/textview1"
-        android:text="Olhe para cima e de sempre o melhor que puder"
-        android:textColor="@color/white"
+        android:text="OLHE PARA CIMA E DE SEMPRE O MELHOR QUE PUDER"
         />
 
     <Button
