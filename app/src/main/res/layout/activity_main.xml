@@ -19,29 +19,31 @@
         />
 
     <EditText
-        android:id="@+id/view1"
         style="@style/ContainerComponents"
+        android:id="@+id/text"
         app:layout_constraintTop_toBottomOf="@id/textview1"
-        android:text="OLHE PARA CIMA E DE SEMPRE O MELHOR QUE PUDER"
+        android:text="Bem-Vindo"
         />
 
     <Button
+        android:id="@+id/buttonprevious"
         style="@style/Buttons"
         android:text="Anterior"
         android:layout_width="110sp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="70sp"
         />
 
 
     <Button
+        android:id="@+id/buttonnext"
         style="@style/Buttons"
         android:text="Próxima"
         android:layout_width="110sp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="70sp" />
 

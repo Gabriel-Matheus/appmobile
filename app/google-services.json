@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "231296535284",
+    "project_id": "appfrasesmobile",
+    "storage_bucket": "appfrasesmobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231296535284:android:d4ccee7b62cee2f9dcaca1",
+        "android_client_info": {
+          "package_name": "App.appmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAunBaLmDKlwmfyt8-dyMUHWkLE-u-5OsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
