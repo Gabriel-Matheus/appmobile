@@ -30,9 +30,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
+//conexão db
 FirebaseFirestore db = FirebaseFirestore.getInstance();
-int id = 0;
 
+//index
+int id = 0;
 
 
     @Override
@@ -48,8 +50,6 @@ int id = 0;
         TextView view = findViewById(R.id.text);
         Button bt_prev = findViewById(R.id.buttonprevious);
         Button bt_next = findViewById(R.id.buttonnext);
-
-
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
