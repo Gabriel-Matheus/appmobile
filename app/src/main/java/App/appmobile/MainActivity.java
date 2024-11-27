@@ -73,12 +73,13 @@ int id = 0;
 
             @Override
             public void onClick(View v) {
-
+                //simulando um index
+                if (id<7) {
+                    id++;
+                }
                 //Mudando Frases no APP
-                id++;
-                String idString = Integer.toString(id);
-                view.setText(document.getString(idString));
-
+                    String idString = Integer.toString(id);
+                    view.setText(document.getString(idString));
                 }
 
 
@@ -90,7 +91,7 @@ int id = 0;
             @Override
             public void onClick(View v) {
 
-                //Mudando Frases no APP
+                //Simulando um index e Mudando Frases no APP
                 if (id>1){
                     id--;
                     String idString = Integer.toString(id);

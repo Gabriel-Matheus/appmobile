@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="70sp"
+        android:layout_marginLeft="40sp"
         />
 
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="70sp" />
+        android:layout_marginRight="40sp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
