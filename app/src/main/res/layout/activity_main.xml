@@ -18,11 +18,11 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <EditText
+    <TextView
         style="@style/ContainerComponents"
         android:id="@+id/text"
+        android:text="Seja Bem-Vindo"
         app:layout_constraintTop_toBottomOf="@id/textview1"
-        android:text="Bem-Vindo"
         />
 
     <Button
