@@ -29,6 +29,7 @@
 
     <Button
         style="@style/Buttons"
+        android:id="@+id/buttonshare"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:padding="5dp"

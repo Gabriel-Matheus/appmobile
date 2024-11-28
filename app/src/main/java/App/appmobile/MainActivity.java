@@ -81,9 +81,7 @@ int id = 0;
                     String idString = Integer.toString(id);
                     view.setText(document.getString(idString));
                 }
-
-
-                });
+        });
 
         //Retornar Frases
         bt_prev.setOnClickListener(new View.OnClickListener() {
@@ -96,22 +94,10 @@ int id = 0;
                     id--;
                     String idString = Integer.toString(id);
                     view.setText(document.getString(idString));
-
                 }
-
-
-                }
-
-
-                });
-
                 }
                 });
-
-
-
+                }
+                });
     }
-
-
-
 }
