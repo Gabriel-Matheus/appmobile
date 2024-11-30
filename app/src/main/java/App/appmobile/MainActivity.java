@@ -2,6 +2,7 @@ package App.appmobile;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,7 @@ int id = 0;
         TextView view = findViewById(R.id.text);
         Button bt_prev = findViewById(R.id.buttonprevious);
         Button bt_next = findViewById(R.id.buttonnext);
+        Button bt_share = findViewById(R.id.buttonshare);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -68,36 +70,44 @@ int id = 0;
                 DocumentSnapshot document = task.getResult();
 
 
-        //Avançar Frases
-        bt_next.setOnClickListener(new View.OnClickListener() {
+                //Avançar Frases
+                bt_next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //simulando um index
+                        if (id<7) {
+                        id++;
+                        }
+                        //Mudando Frases no APP
+                        String idString = Integer.toString(id);
+                        view.setText(document.getString(idString));
+                    }
+                });
 
-            @Override
-            public void onClick(View v) {
-                //simulando um index
-                if (id<7) {
-                    id++;
-                }
-                //Mudando Frases no APP
-                    String idString = Integer.toString(id);
-                    view.setText(document.getString(idString));
-                }
+                //Retornar Frases
+                bt_prev.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //Simulando um index e Mudando Frases no APP
+                        if (id>1){
+                            id--;
+                            String idString = Integer.toString(id);
+                            view.setText(document.getString(idString));
+                        }
+                    }
+                });
+
+                //Mudar para tela de compartilhar frases
+                bt_share.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(MainActivity.this, AdicionarFrases.class);
+                        startActivity(intent);
+                    }
+                });
+            }
         });
-
-        //Retornar Frases
-        bt_prev.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                //Simulando um index e Mudando Frases no APP
-                if (id>1){
-                    id--;
-                    String idString = Integer.toString(id);
-                    view.setText(document.getString(idString));
-                }
-                }
-                });
-                }
-                });
     }
 }

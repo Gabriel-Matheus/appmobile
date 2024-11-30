@@ -10,8 +10,8 @@
 
 
     <TextView
-        style="@style/Title"
         android:id="@+id/textview1"
+        style="@style/Title"
         android:text="@string/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,8 +19,8 @@
         />
 
     <TextView
-        style="@style/ContainerComponents"
         android:id="@+id/text"
+        style="@style/ContainerComponents"
         android:layout_width="match_parent"
         android:text="Seja Bem-Vindo"
         app:layout_constraintTop_toBottomOf="@id/textview1"
@@ -46,7 +46,19 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="40sp" />
+        android:layout_marginRight="40sp"
+        />
 
+    <Button
+        android:id="@+id/buttonshare"
+        style="@style/Buttons"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Compartilhar uma Mensagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonnext"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

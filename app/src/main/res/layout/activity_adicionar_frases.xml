@@ -24,7 +24,6 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         app:layout_constraintTop_toBottomOf="@id/view"
-
         />
 
     <Button
@@ -32,14 +31,23 @@
         android:id="@+id/buttonshare"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         android:text="compartilhar para o próximo"
         app:layout_constraintTop_toBottomOf="@+id/text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         />
 
+    <Button
+        style="@style/Buttons"
+        android:id="@+id/buttonreturn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="retornar para tela anterior"
+        app:layout_constraintTop_toBottomOf="@+id/buttonshare"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="150dp"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
