@@ -30,6 +30,7 @@ public class Login extends AppCompatActivity {
         //Instanciando elementos
         Button btBack = findViewById(R.id.buttonback);
         Button btLogin = findViewById(R.id.buttonlogin_activitylogin);
+        Button btSignup = findViewById(R.id.textViewCadastrar);
 
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,16 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(Login.this,"Funcionalidade ainda não implementada", Toast.LENGTH_LONG).show();
             }
         });
+
+        btSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Cadastro.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 
