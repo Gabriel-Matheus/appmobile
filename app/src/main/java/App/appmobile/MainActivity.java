@@ -52,15 +52,7 @@ int id = 0;
         Button bt_prev = findViewById(R.id.buttonprevious);
         Button bt_next = findViewById(R.id.buttonnext);
         Button bt_share = findViewById(R.id.buttonshare);
-
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-
-
-        });
+        Button bt_login = findViewById(R.id.buttonlogin_activitymain);
 
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -76,7 +68,7 @@ int id = 0;
                     public void onClick(View v) {
                         //simulando um index
                         if (id<7) {
-                        id++;
+                            id++;
                         }
                         //Mudando Frases no APP
                         String idString = Integer.toString(id);
@@ -107,7 +99,26 @@ int id = 0;
                         startActivity(intent);
                     }
                 });
+
+                bt_login.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(MainActivity.this, Login.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+
+
+        });
+
     }
 }

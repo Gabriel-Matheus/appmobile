@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Frases Motivacionais</string>
     <string name="title">MENSAGEM DO DIA</string>
+    <string name="login">FAÇA LOGIN</string>
 </resources>
