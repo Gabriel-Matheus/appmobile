@@ -27,7 +27,9 @@ public class Login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        //Instanciando elementos
         Button btBack = findViewById(R.id.buttonback);
+        Button btLogin = findViewById(R.id.buttonlogin_activitylogin);
 
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +37,14 @@ public class Login extends AppCompatActivity {
 
                 Intent intent = new Intent(Login.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+
+        btLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Login.this,"Funcionalidade ainda não implementada", Toast.LENGTH_LONG).show();
             }
         });
 

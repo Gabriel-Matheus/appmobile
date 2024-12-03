@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -29,14 +30,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.HashMap;
+import java.util.Map;
 
-//conexão db
-FirebaseFirestore db = FirebaseFirestore.getInstance();
+public class MainActivity extends AppCompatActivity {
 
 //index
 int id = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,49 +44,103 @@ int id = 0;
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        //Acessar banco de dados
-        DocumentReference docRef = db.collection("textos").document("frases");
-
         //Instanciar Botões e textos
         TextView view = findViewById(R.id.text);
         Button bt_prev = findViewById(R.id.buttonprevious);
         Button bt_next = findViewById(R.id.buttonnext);
         Button bt_share = findViewById(R.id.buttonshare);
-        Button bt_login = findViewById(R.id.buttonlogin_activitymain);
-
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-                //Coletando Frases no DB
-                DocumentSnapshot document = task.getResult();
+        Button bt_login = findViewById(R.id.buttonlogin1);
 
 
                 //Avançar Frases
                 bt_next.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //simulando um index
-                        if (id<7) {
-                            id++;
-                        }
-                        //Mudando Frases no APP
-                        String idString = Integer.toString(id);
-                        view.setText(document.getString(idString));
+                        //Indexador
+
+
+                        //Conectando ao DB
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                        //Coletar Informações do Banco de Dados
+                        Task<DocumentSnapshot> documentTask = db.collection("textos").document("frases").get();
+
+                        documentTask.addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+
+                                if (document.exists()) {
+                                    // Obtém os dados do documento
+                                    Map<String, Object> data = document.getData();
+
+                                    //Passando pelas frases no botão próxima
+
+                                    if (id < data.size()) {
+                                        id++;
+                                        //Mudando frases na EditText
+                                        String idString = Integer.toString(id);
+                                        view.setText(document.getString(idString));
+                                    }
+                                    else {
+                                        view.setText("Você já leu todas as frases");
+                                        if(id== data.size()){
+                                        id++;
+                                        }
+                                    };
+
+
+
+
+                                } else {
+                                    // O documento não existe
+                                    Toast.makeText(MainActivity.this,"Ocorreu algum erro, contate o administrador", Toast.LENGTH_LONG).show();
+                                }
+
+                            } else {
+                                // Trata o erro
+                                Toast.makeText(MainActivity.this,"Ocorreu algum erro, contate o administrador", Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+
                     }
                 });
 
-                //Retornar Frases
                 bt_prev.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        //Simulando um index e Mudando Frases no APP
-                        if (id>1){
-                            id--;
-                            String idString = Integer.toString(id);
-                            view.setText(document.getString(idString));
+                        //Conectando ao DB
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                        //Coletar Informações do Banco de Dados
+                        Task<DocumentSnapshot> documentTask = db.collection("textos").document("frases").get();
+
+                        documentTask.addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+
+                                if (document.exists()) {
+                                    // Obtém os dados do documento
+                                    Map<String, Object> data = document.getData();
+
+                                    //Passando pelas frases no botão próxima
+
+                                    if (id >1) {
+                                        id--;
+                                        //Mudando frases na EditText
+                                        String idString = Integer.toString(id);
+                                        view.setText(document.getString(idString));
+
+                                    }
+
+                                } else {
+                                    // O documento não existe
+                                    Toast.makeText(MainActivity.this,"Ocorreu algum erro, contate o administrador", Toast.LENGTH_LONG).show();
+                                }
+
                         }
+                    });
                     }
                 });
 
@@ -100,6 +154,7 @@ int id = 0;
                     }
                 });
 
+                //Mudar para tela de Login
                 bt_login.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -108,8 +163,6 @@ int id = 0;
                         startActivity(intent);
                     }
                 });
-            }
-        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
